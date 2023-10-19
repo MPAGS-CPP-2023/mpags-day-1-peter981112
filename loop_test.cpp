@@ -11,7 +11,7 @@ int main()
     while(std::cin >> in_char)
     {
         std::cout<<in_char<<std::endl;
-        b=1;
+        b=1; //count for the number of char for name of the numbers ex 5 for Three 3 for One ...
         if(std::isalpha(in_char)==false)
         {
             //std::cout<<"Not alphbet!"<<std::endl;
@@ -69,28 +69,31 @@ int main()
                     break;
             }
         }
-        else out_str += std::toupper( in_char );
+        else if(std::isalpha(in_char))
+        {
+            out_str += std::toupper( in_char );
+        }
         //std::cout<<"a : "<<a<<" str lst length : "<<out_str.size()<<std::endl;
         //std::cout<<"out str : "<<out_str<<" a th compnent : "<<out_str[a]<<std::endl;
-        if(b==1)
+        if(b==1)       //When alphabet
         {
             std::cout<<out_str[a]<<std::endl;
             //std::cout<<out_str[a]<<std::endl;
         }
-        else
+        else         //when number
         {
-            for(int i = 0; i < b; ++i)
+            for(int i = 0; i < b; ++i) //loop over the char of number name
             {
                 std::cout<<out_str[a+i];
             }
             std::cout<<std::endl;
         }
-        a = a + b;
+        a = a + b; //length of out_str
         
         // - Convert to upper case
         // - Change numbers to words
         // - Ignore any other (non-alpha) characters
         // - In each case, add result to a string variable
     }
-    // print out the new string
+
 }
